@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqls>
+	<!-- memberSQL -->
+	<sql id="insertMember">
+		INSERT INTO MEMBER (USERID, USERPW, USERNAME) 
+		VALUES (? ,? ,?)
+	</sql>
+	
+	<sql id="selectMember">
+		SELECT USERNAME, USERID FROM MEMBER
+			WHERE USERID=? AND USERPW=?
+	</sql>
+	
+	<sql id="selectIdMember">
+		SELECT USERID FROM MEMBER 
+			WHERE USERID=?
+	</sql>
+	
+	<!-- movieSQL -->
+	<sql id="insertMovie">
+		INSERT INTO MOVIE (MOVIETITLE, MOVIECONTENT, MOVIEDATE) 
+		VALUES (? ,? ,?)
+	</sql>
+	
+	<sql id="deleteMovie">
+		DELETE FROM MOVIE 
+			WHERE MOVIENUM=?
+	</sql>
+	
+	<sql id="selectMovie">
+		SELECT MOVIENUM, MOVIETITLE, MOVIECONTENT, MOVIEDATE FROM MOVIE 
+			WHERE MOVIENUM=?
+	</sql>
+	
+	<sql id="listMovie">
+		SELECT M.MOVIENUM, M.MOVIETITLE, M.MOVIEDATE, 
+			ROUND(AVG(R.RATE),1) AS MOVIERATE 
+		FROM MOVIE M 
+			LEFT JOIN RATES R 
+				ON M.MOVIENUM=R.MOVIENUM 
+				GROUP BY M.MOVIENUM 
+			ORDER BY M.MOVIENUM ASC
+	</sql>
+	
+	<sql id="searchMovie">
+		SELECT M.MOVIENUM, M.MOVIETITLE, M.MOVIEDATE, 
+			ROUND(AVG(R.RATE),1) AS MOVIERATE 
+		FROM MOVIE M 
+			LEFT JOIN RATES R 
+				ON M.MOVIENUM=R.MOVIENUM 
+				GROUP BY M.MOVIENUM 
+					HAVING M.MOVIETITLE LIKE CONCAT('%', ? ,'%') 
+		ORDER BY M.MOVIENUM ASC
+	</sql>
+	
+</sqls>
