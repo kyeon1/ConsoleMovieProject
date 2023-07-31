@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+	<!-- 메인 메뉴 -->
+    <action id="1">
+        <package>service</package>
+        <class>MovieService</class>
+        <method>list</method>
+    </action>
+    
+    <action id="2">
+        <package>service</package>
+        <class>MemberService</class>
+        <method>login</method>
+    </action>
+    
+    <action id="3">
+        <package>service</package>
+        <class>MemberService</class>
+        <method>signMember</method>
+    </action>
+    
+    <action id="4">
+        <package>service</package>
+        <class>MovieService</class>
+        <method>exit</method>
+    </action>
+    
+    <!-- 관리자 메뉴 -->
+    <action id="5">
+        <package>service</package>
+        <class>MovieService</class>
+        <method>insert</method>
+    </action>
+    
+    <action id="6">
+        <package>service</package>
+        <class>MovieService</class>
+        <method>delete</method>
+    </action>
+    
+    <!-- 사용자 메뉴 -->
+    <action id="0">
+        <package>service</package>
+        <class>MemberService</class>
+        <method>logout</method>
+    </action>
+    
+    <action id="7">
+        <package>service</package>
+        <class>MovieService</class>
+        <method>detail</method>
+    </action>
+    
+    <action id="8">
+        <package>service</package>
+        <class>MovieService</class>
+        <method>search</method>
+    </action>
+</actions>
+	
