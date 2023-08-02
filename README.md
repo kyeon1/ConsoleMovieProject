@@ -12,3 +12,4 @@ CGV 인기 영화 순위를 크롤링해서 영화 인기 순위 및 영화 줄�
 - JDBC
 - Transaction
 - Reflection
+- jsoup
