@@ -6,6 +6,7 @@ CGV 인기 영화 순위를 크롤링해서 영화 인기 순위 및 영화 줄�
 <br>
 
 ### 구현한 기술
+- Java API
 - Eclipse
 - Java
 - MySQL(8.0.31)
